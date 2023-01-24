@@ -1,0 +1,22 @@
+class Repository:
+    def __init__(self):
+        self.data = {}
+
+    def save(self, key, value):
+        self.data[key] = value
+    
+    def get(self, key):
+        return self.data.get(key)
+    
+    def delete(self, key):
+        if key in self.data:
+            del self.data[key]
+
+# Example usage:
+
+repo = Repository()
+repo.save("key1", "value1")
+repo.save("key2", "value2")
+print(repo.get("key1")) # Output: "value1"
+repo.delete("key1")
+print(repo.get("key1")) # Output: None
